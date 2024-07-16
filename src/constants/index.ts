@@ -1,7 +1,3 @@
-import starIcon from "@/assets/images/icon-star.svg";
-import backgroundPatternMobile from "@/assets/images/background-pattern-mobile.svg";
-import backgroundPatternDesktop from "@/assets/images/background-pattern-desktop.svg";
-
 export const HeadingTitle = "FAQs";
 
 export const accordionData = [
