@@ -18,28 +18,43 @@ const Accordion = ({ title, children }: AccordionPropsType) => {
 
   return (
     <React.Fragment>
-      <div>
-        <h3>
-          <button
-            type="button"
-            id={accordionButtonId}
-            aria-expanded={isExpanded}
-            aria-controls={accordionContentId}
-            onClick={handleShow}
-          >
-            <span>{title}</span>
-            <span className="accordion--icon"></span>
-          </button>
-        </h3>
-      </div>
+      <div className="py-5 lg:py-6 border-b border-border-bottom-clr">
+        <div>
+          <h3>
+            <button
+              type="button"
+              id={accordionButtonId}
+              aria-expanded={isExpanded}
+              aria-controls={accordionContentId}
+              onClick={handleShow}
+              style={
+                isExpanded
+                  ? { paddingBlockEnd: "1.25rem" }
+                  : { paddingBlockEnd: "0" }
+              }
+              className="w-full flex items-center justify-between text-dark-purple-clr font-fw-semi-bold hover:text-purple-clr transition-colors text-left"
+            >
+              <span>{title}</span>
+              <span
+                className={
+                  isExpanded ? "accordion--icon active" : "accordion--icon"
+                }
+              >
+                <span>{isExpanded ? "-" : "+"}</span>
+              </span>
+            </button>
+          </h3>
+        </div>
 
-      <div
-        id={accordionContentId}
-        role="region"
-        aria-labelledby={accordionButtonId}
-        hidden={!isExpanded}
-      >
-        {children}
+        <div
+          role="region"
+          id={accordionContentId}
+          aria-labelledby={accordionButtonId}
+          hidden={!isExpanded}
+          className="w-full"
+        >
+          {children}
+        </div>
       </div>
     </React.Fragment>
   );
