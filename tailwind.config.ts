@@ -8,6 +8,11 @@ export default {
       "light-pink-clr": "var(--light-pink-clr)",
       "grayish-purple-clr": "var(--grayish-purple-clr)",
       "dark-purple-clr": "var(--dark-purple-clr)",
+      "purple-clr": "var(--purple-clr)",
+      "border-bottom-clr": "var(--border-bottom-clr)",
+    },
+    fontSize: {
+      "fs-heading": "var(--fs-45-60)",
     },
     fontWeight: {
       "fw-semi-bold": "var(--fw-semi-bold)",
