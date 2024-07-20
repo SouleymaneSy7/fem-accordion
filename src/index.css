@@ -8,6 +8,8 @@
   --light-pink-clr: hsl(275, 100%, 97%);
   --grayish-purple-clr: hsl(292, 16%, 49%);
   --dark-purple-clr: hsl(292, 42%, 14%);
+  --purple-clr: hsl(281, 83%, 54%);
+  --border-bottom-clr: rgb(235, 233, 245);
 
   /* Fonts */
   --font-family-base: "Work Sans", sans-serif;
@@ -16,30 +18,83 @@
   --fw-semi-bold: 600;
   --fw-bold: 700;
 
-  --fs-16: 1rem;
+  --fs-14-16: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+  --fs-45-60: clamp(2.8125rem, 2.5446rem + 1.3393vw, 3.75rem);
 
   /* Width */
-  --container-max-width: 520px;
+  --main-content-max-width: 580px;
+
+  /* Padding & Margin */
+  --main-padding-x: clamp(1.75rem, 1.6786rem + 0.3571vw, 2rem);
+  --main-padding-y: clamp(2.125rem, 2.0179rem + 0.5357vw, 2.5rem);
+  --button-padding-y: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+
+  --heading-margin-bottom: clamp(0rem, -0.1786rem + 0.8929vw, 0.625rem);
 }
 
 body {
   font-family: var(--font-family-base);
-  font-size: var(--fs-16);
+  font-size: var(--fs-14-16);
   font-weight: var(--fw-regular);
   color: var(--grayish-purple-clr);
 
-  min-height: 100vh;
+  height: 100vh;
 
   background-color: var(--light-pink-clr);
-  margin: 0;
-  overflow: hidden;
+  padding: 1.25rem;
+
+  /* overflow-x: hidden; */
 }
 
 #root {
   width: 100%;
   height: 100%;
-  min-height: 100vh;
 
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main {
+  width: min(100%, var(--main-content-max-width));
+}
+
+section > div:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.accordion--icon {
+  --icon-size: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 1;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  color: var(--white-clr);
+
+  border-radius: 100vmax;
+
+  background-color: var(--purple-clr);
+
+  & span {
+    display: inline-block;
+
+    font-size: 24px;
+    font-weight: var(--fw-regular);
+    line-height: 0;
+  }
+
+  &.active {
+    background-color: var(--dark-purple-clr);
+
+    & span {
+      transform: translateY(-2px);
+    }
+  }
 }
