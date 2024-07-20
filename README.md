@@ -18,7 +18,7 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 ## Links
 
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/faq-accordion-made-with-react-typescript-and-tailwind-css-geuq0_ViuL)
-- Live Site Demo URL: [Demo Live]([https://your-live-site-url.com](https://fem-accordion-ten.vercel.app/))
+- Live Site Demo URL: [Demo Live](https://fem-accordion-ten.vercel.app/)
 
 ## The challenge
 
